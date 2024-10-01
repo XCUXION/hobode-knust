@@ -46,7 +46,7 @@ const Sheet = ({
                         transition={{
                             type : 'spring',
                             bounce : 0.2,
-                            duration : 0.3
+                            duration : 0.15
                         }}
                         className={`bg-[#ffffffd9] backdrop-filter z-10 backdrop-blur-lg w-[400px] h-full fixed right-0 top-0 ${containerStyles}`}
                     >

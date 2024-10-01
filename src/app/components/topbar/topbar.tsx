@@ -9,9 +9,30 @@ import { useEffect, useState } from "react"
 import { FaBell, FaHeart } from "react-icons/fa6"
 
 const Topbar = () => {
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrollPosition(position);
+    };
+  
+    useEffect(() => {
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
     return (
-        <div className={`fixed z-10 px-8 top-0 w-full h-[70px] bg-[#ffffffcb] backdrop-filter backdrop-blur-2xl flex justify-center items-center border-b-[1px] border-b-solid border-b-border-primary`}>
-            <div className="w-full max-w-[1440px] flex justify-between">
+        <div className={`fixed z-10 px-8 top-0 w-full h-[70px] flex justify-center items-center border-b-[1px] border-b-solid border-b-border-primary`}>
+            <Image 
+                src={require('@/assets/dev/bg.jpg')} 
+                alt="Profile-icon"
+                fill
+                style={{ objectFit: "cover" }}
+            /> 
+            <div className="w-full h-full bg-[#fffffff0] backdrop-filter backdrop-blur-2xl absolute"></div>
+            <div className="w-full max-w-[1440px] flex justify-between absolute">
                 <Text 
                     textColor={theme.colors.text.primary}
                     className="flex items-center"    

@@ -1,4 +1,4 @@
-import { baseProps } from "@/utils/@types"
+import { baseProps } from "@/utils/types/@types"
 
 const Container = ({
     children,
