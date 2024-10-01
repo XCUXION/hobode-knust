@@ -32,44 +32,46 @@ const Topbar = () => {
                 style={{ objectFit: "cover" }}
             /> 
             <div className="w-full h-full bg-[#fffffff0] backdrop-filter backdrop-blur-2xl absolute"></div>
-            <div className="w-full max-w-[1440px] flex justify-between absolute">
-                <Text 
-                    textColor={theme.colors.text.primary}
-                    className="flex items-center"    
-                >
-                    Hobode
-                </Text>
-                <div className="flex gap-4 items-center">
-                    <div className="flex gap-4">
-                        <Searchbar />
-                    </div>
+            <div className={`absolute px-8 w-full flex items-center justify-center`}>
+                <div className="w-full max-w-[1440px] flex justify-between">
+                    <Text 
+                        textColor={theme.colors.text.primary}
+                        className="flex items-center"    
+                    >
+                        Hobode
+                    </Text>
                     <div className="flex gap-4 items-center">
-                        <FaHeart 
-                            color={theme.colors.text.secondary}
-                            className="hover:opacity-70 duration-150 cursor-pointer"
-                        />
-                        <div className="relative">
-                            <div className="absolute top-[-5px] right-[-5px] bg-main-primary rounded-full w-[8px] h-[8px]"></div>
-                            <FaBell 
-                                color={theme.colors.main.primary}
+                        <div className="flex gap-4">
+                            <Searchbar />
+                        </div>
+                        <div className="flex gap-4 items-center">
+                            <FaHeart 
+                                color={theme.colors.text.secondary}
                                 className="hover:opacity-70 duration-150 cursor-pointer"
                             />
-                        </div>
-                        <Chip
-                            className="!px-1 !gap-1 !pr-2"
-                        >
-                            <div className="relative w-[20px] h-[20px] bg-bg-tetiary rounded-full">
-                                <Image 
-                                    src={require('@/assets/dev/profile-icon.png')} 
-                                    alt="Profile-icon"
-                                    fill
-                                    style={{ objectFit: "contain" }}
+                            <div className="relative">
+                                <div className="absolute top-[-5px] right-[-5px] bg-main-primary rounded-full w-[8px] h-[8px]"></div>
+                                <FaBell 
+                                    color={theme.colors.main.primary}
+                                    className="hover:opacity-70 duration-150 cursor-pointer"
                                 />
                             </div>
-                            <Text>
-                                Prince Nedjoh
-                            </Text>
-                        </Chip>
+                            <Chip
+                                className="!px-1 !gap-1 !pr-2"
+                            >
+                                <div className="relative w-[20px] h-[20px] bg-bg-tetiary rounded-full">
+                                    <Image 
+                                        src={require('@/assets/dev/profile-icon.png')} 
+                                        alt="Profile-icon"
+                                        fill
+                                        style={{ objectFit: "contain" }}
+                                    />
+                                </div>
+                                <Text>
+                                    Prince Nedjoh
+                                </Text>
+                            </Chip>
+                        </div>
                     </div>
                 </div>
             </div>

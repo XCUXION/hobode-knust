@@ -2,7 +2,7 @@ import Hostel from "./hostel"
 
 const Hostels = () => {
     return (
-        <div className="flex w-full gap-4 flex-wrap">
+        <div className="flex w-full justify-between gap-4 flex-wrap">
             {
                 Array.from({length : 30}).map((item, index) => (
                     <div
