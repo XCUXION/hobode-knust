@@ -10,6 +10,7 @@ import { IoIosBed } from "react-icons/io";
 import ReactStars from "react-rating-stars-component";
 import React from "react";
 import { FaHeart, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
+import Link from "next/link"
 
 const Hostel = () => {
     const ratingChanged = (newRating : number) => {
@@ -32,13 +33,16 @@ const Hostel = () => {
             </div>
             <div className="flex w-full justify-between px-1">
                 <div className="flex flex-col">
-                    <Text
-                        textColor={theme.colors.text.primary}
-                        size={TypographySize.HM}
-                        bold={TypographyBold.sm2}
-                    >
-                        Franko Hostel
-                    </Text>
+                    <Link href={'/hostels/1'}>
+                        <Text
+                            textColor={theme.colors.text.primary}
+                            size={TypographySize.HM}
+                            bold={TypographyBold.sm2}
+                            className="hover:!underline hover:!opacity-70"
+                        >
+                            Franko Hostel
+                        </Text>
+                    </Link>
                     <div className="flex items-center gap-[1px] ml-[-2px]">
                         <IoLocationSharp 
                             color={theme.colors.text.secondary}
