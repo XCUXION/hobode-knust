@@ -23,13 +23,15 @@ const Hostel = () => {
                     color="#00000019"
                     className="absolute top-3 right-3 z-[5] cursor-pointer backdrop-filter backdrop-blur-2xl"
                 />
-                <Image 
-                    src={require('@/assets/dev/bg.jpg')} 
-                    alt="Profile-icon"
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="hover:scale-110 duration-200 cursor-pointer hover:opacity-70"
-                /> 
+                <Link href={'/hostels/1'}>
+                    <Image 
+                        src={require('@/assets/dev/bg.jpg')} 
+                        alt="Profile-icon"
+                        fill
+                        style={{ objectFit: "cover" }}
+                        className="hover:scale-110 duration-200 cursor-pointer hover:opacity-70"
+                    /> 
+                </Link>
             </div>
             <div className="flex w-full justify-between px-1">
                 <div className="flex flex-col">
