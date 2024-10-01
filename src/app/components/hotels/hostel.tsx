@@ -17,7 +17,7 @@ const Hostel = () => {
         console.log(newRating);
       };
     return (
-        <div className="w-[275px] rounded-xl bg-bg-transparent-primary p-2 gap-1 flex flex-col">
+        <div className="2xl:w-[275px] w-[258px] rounded-xl bg-bg-transparent-primary p-2 gap-1 flex flex-col">
             <div className="rounded-lg w-full h-[150px] relative overflow-hidden">
                 <FaHeart 
                     color="#00000019"
