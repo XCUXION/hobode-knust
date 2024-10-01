@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Topbar from "./components/topbar/topbar";
 
 export const metadata: Metadata = {
   title: "Hobode",
@@ -12,13 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <div className="w-full h-full fixed top-0 bg-[#fffffff1] backdrop-filter backdrop-blur-2xl"></div>
-        <div className="w-full h-full relative">
-          {children}
-        </div>
-      </body>
-    </html>
+    <div className="w-full h-full relative pt-[90px] justify-center items-center flex">
+      <Topbar />
+      <div className="w-full h-full">
+        {children}
+      </div>
+    </div>
   );
 }
