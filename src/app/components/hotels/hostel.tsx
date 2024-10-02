@@ -7,7 +7,6 @@ import theme from "@/styles/theme"
 import Image from "next/image"
 import { IoLocationSharp } from "react-icons/io5"
 import { IoIosBed } from "react-icons/io";
-import ReactStars from "react-rating-stars-component";
 import React from "react";
 import { FaHeart, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 import Link from "next/link"
@@ -15,7 +14,9 @@ import Link from "next/link"
 const Hostel = () => {
     const ratingChanged = (newRating : number) => {
         console.log(newRating);
-      };
+    };
+    const rating = 3.5
+
     return (
         <div className="2xl:w-[275px] w-[258px] rounded-xl bg-bg-transparent-primary p-2 gap-1 flex flex-col">
             <div className="rounded-lg w-full h-[150px] relative overflow-hidden">
@@ -34,7 +35,7 @@ const Hostel = () => {
                 </Link>
             </div>
             <div className="flex w-full justify-between px-1">
-                <div className="flex flex-col">
+                <div className="flex flex-col gap-[2px]">
                     <Link href={'/hostels/1'}>
                         <Text
                             textColor={theme.colors.text.primary}
@@ -45,7 +46,7 @@ const Hostel = () => {
                             Franko Hostel
                         </Text>
                     </Link>
-                    <div className="flex items-center gap-[1px] ml-[-2px]">
+                    <div className="flex items-center gap-[1px] ml-[-2px] mt-[-4px]">
                         <IoLocationSharp 
                             color={theme.colors.text.secondary}
                             size={13}
@@ -54,19 +55,17 @@ const Hostel = () => {
                             Kotei, Kumasi
                         </Text>
                     </div>
-                    <div className="ml-[-1px]">
-                        <ReactStars
-                            count={5}
-                            onChange={ratingChanged}
-                            value={3}
-                            size={15}
-                            isHalf={true}
-                            emptyIcon={<FaRegStar />}
-                            halfIcon={<FaStarHalfAlt />}
-                            fullIcon={<FaStar />}
-                            activeColor={theme.colors.main.primary}
-                            edit={false}
-                        />
+                    <div className="ml-[-1px] flex gap-1">
+                        {
+                            [1,2,3,4,5].map((star, index) => (
+                                index < rating - 1 ?
+                                <FaStar key={index} color={theme.colors.main.primary} size={13}/>
+                                : index - 0.5 === rating - 1 ?
+                                <FaStarHalfAlt key={index} color={theme.colors.main.primary} size={13}/>
+                                :
+                                <FaRegStar key={index} color={theme.colors.main.primary} size={13}/>
+                            ))
+                        }
                     </div>
                     <div className="flex gap-1 mt-1 ml-[-2px]">
                         {
