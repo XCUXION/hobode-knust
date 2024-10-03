@@ -7,6 +7,7 @@ import theme from "@/styles/theme"
 import Image from "next/image"
 import { useEffect, useState } from "react"
 import { FaBell, FaHeart } from "react-icons/fa6"
+import UserProfile from "./components/userProfile"
 
 const Topbar = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -56,21 +57,7 @@ const Topbar = () => {
                                     className="hover:opacity-70 duration-150 cursor-pointer"
                                 />
                             </div>
-                            <Chip
-                                className="!px-1 !gap-1 !pr-2"
-                            >
-                                <div className="relative w-[20px] h-[20px] bg-bg-tetiary rounded-full">
-                                    <Image 
-                                        src={require('@/assets/dev/profile-icon.png')} 
-                                        alt="Profile-icon"
-                                        fill
-                                        style={{ objectFit: "contain" }}
-                                    />
-                                </div>
-                                <Text>
-                                    Prince Nedjoh
-                                </Text>
-                            </Chip>
+                            <UserProfile />
                         </div>
                     </div>
                 </div>

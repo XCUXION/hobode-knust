@@ -10,6 +10,7 @@ import { IoIosBed } from "react-icons/io";
 import React from "react";
 import { FaHeart, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
 import Link from "next/link"
+import Ratings from "@/components/ratings/ratings"
 
 const Hostel = () => {
     const ratingChanged = (newRating : number) => {
@@ -55,18 +56,7 @@ const Hostel = () => {
                             Kotei, Kumasi
                         </Text>
                     </div>
-                    <div className="ml-[-1px] flex gap-1">
-                        {
-                            [1,2,3,4,5].map((star, index) => (
-                                index < rating - 1 ?
-                                <FaStar key={index} color={theme.colors.main.primary} size={13}/>
-                                : index - 0.5 === rating - 1 ?
-                                <FaStarHalfAlt key={index} color={theme.colors.main.primary} size={13}/>
-                                :
-                                <FaRegStar key={index} color={theme.colors.main.primary} size={13}/>
-                            ))
-                        }
-                    </div>
+                    <Ratings rating={rating}/>
                     <div className="flex gap-1 mt-1 ml-[-2px]">
                         {
                             [1,2,3].map((item, index) => (

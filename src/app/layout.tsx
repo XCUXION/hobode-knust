@@ -15,7 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="w-full h-full fixed top-0 bg-[#fffffff1] backdrop-filter backdrop-blur-2xl"></div>
-        <div className="w-full h-full relative">
+        <div className="w-full h-full pb-10 relative">
           {children}
         </div>
       </body>
