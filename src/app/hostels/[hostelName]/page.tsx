@@ -26,13 +26,13 @@ const ViewHostel = () => {
 
     return (
         <Resize>
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col gap-2 w-full mt-[-10px]">
                 <div className="flex w-full justify-between items-center">
                     <Crumbs />
                     <Share />
                 </div>
                 <Carousel />
-                <div className="flex gap-14">
+                <div className="flex gap-2 lg:gap-14 flex-wrap">
                     <HostelDetails />
                     <Bill />
                 </div>

@@ -6,10 +6,16 @@ import { IoIosBed } from "react-icons/io"
 import { IoReceipt } from "react-icons/io5"
 import Button from "@/components/button/button"
 import { MdOutlineShoppingCartCheckout } from "react-icons/md"
+import { useRouter } from "next/navigation"
 
 const Bill = () => {
+    const router = useRouter()
+
+    const hanldeSubmit = async () => {
+        router.push('/checkout')
+    }
     return (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 p-6 rounded-xl border-[1px] border-solid border-border-primary">
             <div className="flex gap-1 items-center">
                 <Text
                     textColor={theme.colors.text.primary}
@@ -22,12 +28,12 @@ const Bill = () => {
                     /year
                 </Text>
             </div>
-            <div className="flex gap-3 ml-[-2px] flex-wrap max-w-[500px]">
+            <div className="flex gap-3 ml-[-2px] flex-wrap max-w-[400px]">
                 {
                     [1,2,3,4,5,6,7].map((item, index) => (
                         <Chip
                             key={index}
-                            className="!bg-[#00000010] !px-3 !py-1"
+                            className="!px-3 !py-1"
                         >
                             <div className="flex items-center gap-1">
                                 <IoIosBed
@@ -96,6 +102,7 @@ const Bill = () => {
             <Button
                 text="Check out"
                 icon={<MdOutlineShoppingCartCheckout />}
+                onClick={hanldeSubmit}
             />
         </div>
     )

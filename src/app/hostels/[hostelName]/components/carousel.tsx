@@ -1,17 +1,38 @@
-const Carousel = () => {
+'use client'
+
+import Carousel from "@/components/carousel/carousel"
+import Image from "next/image"
+import { useState } from "react"
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
+
+const CarouselContainer = () => {
+    const [carouselData, setCarouselData] = useState([1,2,3,4,5])
+    const [currentIndex, setCurrentIndex] = useState(0)
+
     return (
         <div className="w-full flex flex-col gap-2">
-            <div className="max-w-[1000px] h-[400px] rounded-xl bg-bg-primary">
-
+            <div className="max-w-[1100px] h-[400px] rounded-xl bg-bg-primary overflow-hidden">
+                <Carousel 
+                    carouselData={carouselData}
+                    currentIndex={currentIndex}
+                    setCurrentIndex={setCurrentIndex}
+                />
             </div>
             <div className="flex gap-4">
                 {
-                    [1,2,3,4].map((image, index) => (
+                    carouselData.map((image, index) => (
                         <div 
-                            className="h-[100px] w-[100px] rounded-lg bg-bg-primary"
+                            className={`${currentIndex === index && 'shadow-custom-shadow border-solid border-[3px] border-[#00000046]'} h-[100px] relative overflow-hidden w-[100px] rounded-lg bg-bg-primary`}
                             key={index}
+                            onClick={()=>setCurrentIndex(index)}
                         >
-
+                            <Image
+                                src={require('@/assets/dev/bg.jpg')} 
+                                alt="test-bg"
+                                fill
+                                style={{ objectFit: "cover" }}
+                                className="hover:lg:scale-[1.2] duration-200 cursor-pointer hover:lg:opacity-70"
+                            /> 
                         </div>
                     ))
                 }
@@ -19,4 +40,4 @@ const Carousel = () => {
         </div>
     )
 }
-export default Carousel
+export default CarouselContainer

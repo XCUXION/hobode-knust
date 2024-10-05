@@ -1,3 +1,5 @@
+'use client'
+
 import Chip from "@/components/chip/chip"
 import Link from "@/components/link/link"
 import Text from "@/styles/components/text"
@@ -11,8 +13,8 @@ const Crumbs = () => {
     const router = useRouter()
 
     return (
-        <div className="flex gap-2 items-center mt-[-3px]">
-            <Chip
+        <div className="flex gap-2 items-center mt-[-12px]">
+            <Chip 
                 className="!rounded-md h-[30px] w-[30px] !p-0 mt-[3px]"
                 onClick={()=>router.back()}
             >
@@ -36,7 +38,7 @@ const Crumbs = () => {
                 <Text
                     textColor={theme.colors.main.primary}
                 >
-                    {hostelName}
+                    Checkout
                 </Text>
             </Link>
         </div>
