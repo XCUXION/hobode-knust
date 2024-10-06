@@ -20,6 +20,7 @@ const Crumbs = () => {
             >
                 <FaCaretLeft 
                     color={theme.colors.text.primary}
+                    className="mr-[3px]"
                 />
             </Chip>
             <Link href={'/'}>

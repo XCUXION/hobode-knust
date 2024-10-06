@@ -8,9 +8,12 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 import { FaBell, FaHeart } from "react-icons/fa6"
 import UserProfile from "./components/userProfile"
+import { useRouter } from "next/navigation"
 
 const Topbar = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
+
+    const router = useRouter()
 
     const handleScroll = () => {
       const position = window.scrollY;
@@ -34,13 +37,15 @@ const Topbar = () => {
             /> 
             <div className="w-full h-full bg-[#fffffff0] backdrop-filter backdrop-blur-2xl absolute"></div>
             <div className={`absolute px-8 w-full flex items-center justify-center`}>
-                <div className="w-full max-w-[1440px] flex justify-between">
-                    <Text 
-                        textColor={theme.colors.text.primary}
-                        className="flex items-center"    
-                    >
-                        Hobode
-                    </Text>
+                <div className="w-full max-w-[1440px] flex justify-between items-center">
+                    <span onClick={()=>router.push('/')} className="h-fit">
+                        <Text 
+                            textColor={theme.colors.text.primary}
+                            className="flex items-center cursor-pointer hover:!opacity-[0.7]"    
+                        >
+                            Hobode
+                        </Text>
+                    </span>
                     <div className="flex gap-4 items-center">
                         <div className="flex gap-4">
                             <Searchbar />
