@@ -13,7 +13,7 @@ const Crumbs = () => {
     const router = useRouter()
 
     return (
-        <div className="flex gap-2 items-center mt-[-12px]">
+        <div className="flex gap-2 items-center ">
             <Chip 
                 className="!rounded-md !h-[30px] !w-[30px] !p-0 mt-[3px]"
                 onClick={()=>router.back()}

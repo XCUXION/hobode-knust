@@ -2,15 +2,33 @@
 
 import Resize from "@/components/resize/resize"
 import Crumbs from "./components/crumbs"
-import { useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import PaymentMethods from "./components/paymentMethods"
-import Divider from "@/components/divider/divider"
-import CardDetails from "./components/cardDetails"
-import BillingAddress from "./components/billingAddress"
 import Bill from "./components/bill"
+import Card from "./components/card"
+import { PaymentContext } from "./context/paymentContext"
+import React from "react"
+import { AnimatePresence, motion } from 'framer-motion';
+import MTN from "./components/mtn"
+import Telecel from "./components/telecel"
+import AirtelTigo from "./components/airtelTigo"
 
 const Checkout = () => {
-    const [cardNumber, setCardNumber] = useState<string>('')
+    const {paymentMethods, setPaymentMethods} = useContext(PaymentContext)
+    const [paymentActiveMethodName, setActivePaymentMethodName] = useState<string>()
+
+    const getActivePaymentMethodName = () => {
+        paymentMethods.map((item) => {
+            console.log(item.name)
+            if(item.active === true){
+                setActivePaymentMethodName(item.name) 
+            }
+        })
+    }
+
+    useEffect(()=>{
+        getActivePaymentMethodName()
+    },[paymentMethods])
     
     return (
         <Resize>
@@ -22,17 +40,20 @@ const Checkout = () => {
                     <div className="flex gap-8 w-full max-w-[1024px]">
                         <div className="flex flex-col gap-4 w-[500px]">
                             <PaymentMethods />
-                            <div className="w-full flex flex-col gap-6">
-                                <CardDetails 
-                                    cardNumber={cardNumber}
-                                    setCardNumber={setCardNumber}
-                                />
-                                <Divider />
-                                <BillingAddress 
-                                    cardNumber={cardNumber}
-                                    setCardNumber={setCardNumber}
-                                />
-                            </div>
+                            <AnimatePresence>
+                                {
+                                    paymentActiveMethodName === 'Visa' ?
+                                    <Card />
+                                    : paymentActiveMethodName === 'MTN' ?
+                                    <MTN />
+                                    : paymentActiveMethodName === 'Telecel' ?
+                                    <Telecel />
+                                    : paymentActiveMethodName === 'AirtelTigo' ?
+                                    <AirtelTigo />
+                                    :
+                                    <></>
+                                }
+                            </AnimatePresence>
                         </div>
                         <Bill />
                     </div>
