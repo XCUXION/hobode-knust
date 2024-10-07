@@ -26,15 +26,19 @@ const ViewHostel = () => {
 
     return (
         <Resize>
-            <div className="flex flex-col gap-2 w-full mt-[-10px]">
-                <div className="flex w-full justify-between items-center">
-                    <Crumbs />
-                    <Share />
-                </div>
-                <Carousel />
-                <div className="flex gap-2 lg:gap-14 flex-wrap">
-                    <HostelDetails />
-                    <Bill />
+            <div className="w-full flex justify-center">
+                <div className="flex flex-col gap-2 max-w-[1024px] w-full mt-[-10px] items-center">
+                    <div className="flex w-full justify-between items-center">
+                        <Crumbs />
+                        <Share />
+                    </div>
+                    <div className="flex flex-col gap-4 w-full max-w-[1440px] items-center">
+                        <Carousel />
+                        <div className="flex w-full max-w-[1024px] gap-2 lg:gap-14 flex-wrap">
+                            <HostelDetails />
+                            <Bill />
+                        </div>
+                    </div>
                 </div>
             </div>
         </Resize>

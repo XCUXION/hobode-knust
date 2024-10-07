@@ -8,14 +8,11 @@ import Image from "next/image"
 import { IoLocationSharp } from "react-icons/io5"
 import { IoIosBed } from "react-icons/io";
 import React from "react";
-import { FaHeart, FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
+import { FaHeart } from "react-icons/fa"
 import Link from "next/link"
 import Ratings from "@/components/ratings/ratings"
 
 const Hostel = () => {
-    const ratingChanged = (newRating : number) => {
-        console.log(newRating);
-    };
     const rating = 3.5
 
     return (

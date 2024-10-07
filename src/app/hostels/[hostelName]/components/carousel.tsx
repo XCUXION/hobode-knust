@@ -10,7 +10,7 @@ const CarouselContainer = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     return (
-        <div className="w-full flex flex-col gap-2">
+        <div className="w-full max-w-[1024px] flex flex-col gap-2">
             <div className="max-w-[1100px] h-[400px] rounded-xl bg-bg-primary overflow-hidden">
                 <Carousel 
                     carouselData={carouselData}
@@ -18,24 +18,26 @@ const CarouselContainer = () => {
                     setCurrentIndex={setCurrentIndex}
                 />
             </div>
-            <div className="flex gap-4">
-                {
-                    carouselData.map((image, index) => (
-                        <div 
-                            className={`${currentIndex === index && 'shadow-custom-shadow border-solid border-[3px] border-[#00000046]'} h-[100px] relative overflow-hidden w-[100px] rounded-lg bg-bg-primary`}
-                            key={index}
-                            onClick={()=>setCurrentIndex(index)}
-                        >
-                            <Image
-                                src={require('@/assets/dev/bg.jpg')} 
-                                alt="test-bg"
-                                fill
-                                style={{ objectFit: "cover" }}
-                                className="hover:lg:scale-[1.2] duration-200 cursor-pointer hover:lg:opacity-70"
-                            /> 
-                        </div>
-                    ))
-                }
+            <div className="w-full flex justify-center">
+                <div className="flex gap-4">
+                    {
+                        carouselData.map((image, index) => (
+                            <div 
+                                className={`${currentIndex === index && 'shadow-custom-shadow border-solid border-[3px] border-[#00000046]'} h-[100px] relative overflow-hidden w-[100px] rounded-lg bg-bg-primary`}
+                                key={index}
+                                onClick={()=>setCurrentIndex(index)}
+                            >
+                                <Image
+                                    src={require('@/assets/dev/bg.jpg')} 
+                                    alt="test-bg"
+                                    fill
+                                    style={{ objectFit: "cover" }}
+                                    className="lg:hover:scale-[1.2] duration-200 cursor-pointer hover:lg:opacity-70"
+                                /> 
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
         </div>
     )

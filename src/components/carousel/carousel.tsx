@@ -69,7 +69,7 @@ const Carousel = ({
                     {
                         carouselData.map((item : any, index : number) => (
                             <div 
-                                className={`${index === currentIndex ? 'w-[12px] h-[12px] bg-[#db950ad6]' : 'hover:scale-[1.2]'} cursor-pointer duration-200 w-[8px] backdrop-filter backdrop-blur-md shadow-lg h-[8px] rounded-full bg-[#0000002f]`}
+                                className={`${index === currentIndex ? 'w-[12px] h-[12px] bg-[#db950ad6]' : 'hover:scale-[1.2] w-[8px] h-[8px]'} cursor-pointer duration-200 backdrop-filter backdrop-blur-md shadow-lg rounded-full bg-[#0000002f]`}
                                 key={index}
                                 onClick={()=>setCurrentIndex(index)}
                             ></div>

@@ -10,7 +10,7 @@ import { IoLocationSharp } from "react-icons/io5"
 
 const HostelDetails = () => {
     return (
-        <div className="flex flex-col gap-4 w-full max-w-[600px]">
+        <div className="flex flex-col gap-4 w-full flex-1">
             <div className="flex flex-col gap-2 ml-1">
                 <Text
                     textColor={theme.colors.text.primary}
