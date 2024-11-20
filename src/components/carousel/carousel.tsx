@@ -7,10 +7,12 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
 const Carousel = ({
     currentIndex,
     carouselData,
-    setCurrentIndex
+    setCurrentIndex,
+    className
 } : {
     currentIndex : number
     carouselData : any[]
+    className? : string
     setCurrentIndex: Dispatch<SetStateAction<number>>
 }) => {
     const handleSwipeRight = () => {
@@ -26,7 +28,7 @@ const Carousel = ({
     }
 
     return (
-        <div className="w-full h-full overflow-hidden relative">
+        <div className={`w-full h-full overflow-hidden relative ${className}`}>
             <div
                 className="flex transition-transform duration-500 h-full"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -49,7 +51,7 @@ const Carousel = ({
                 }
             </div>
             <div 
-                className="absolute top-[48%] left-8 bg-[#00000082] hover:bg-[#0000002f] cursor-pointer duration-100 backdrop-filter backdrop-blur-lg p-3 rounded-full"
+                className="absolute top-[48%] left-4 md:left-8 bg-[#00000082] hover:bg-[#0000002f] cursor-pointer duration-100 backdrop-filter backdrop-blur-lg p-3 rounded-full"
                 onClick={handleSwipeLeft}
             >
                 <FaChevronLeft
@@ -57,7 +59,7 @@ const Carousel = ({
                 />
             </div>
             <div    
-                className="absolute top-[48%] right-8 bg-[#00000082] hover:bg-[#0000002f] cursor-pointer duration-100 backdrop-filter backdrop-blur-lg p-3 rounded-full"
+                className="absolute top-[48%] right-4 md:right-8 bg-[#00000082] hover:bg-[#0000002f] cursor-pointer duration-100 backdrop-filter backdrop-blur-lg p-3 rounded-full"
                 onClick={handleSwipeRight}
             >
                 <FaChevronRight

@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="w-full h-full relative pt-[90px] justify-center items-center flex">
+    <div className="w-full h-full relative pt-[65px] md:pt-[90px] justify-center items-center flex">
       <Topbar />
       <div className="w-full h-full">
         {children}

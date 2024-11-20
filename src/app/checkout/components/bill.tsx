@@ -15,7 +15,7 @@ const Bill = () => {
         router.push('/checkout')
     }
     return (
-        <div className="flex flex-col h-fit gap-1 p-6 rounded-xl border-[1px] border-solid border-border-primary">
+        <div className="flex w-full md:w-fit flex-col h-fit gap-1 p-6 rounded-xl border-[1px] border-solid border-border-primary">
             <div className="flex gap-1 items-center">
                 <Text
                     textColor={theme.colors.text.primary}
@@ -28,7 +28,7 @@ const Bill = () => {
                     /year
                 </Text>
             </div>
-            <div className="flex flex-col gap-1 mt-2 w-[400px]">
+            <div className="flex flex-col gap-1 mt-2 w-full md:w-[400px]">
                 <div className="flex flex-col">
                     {
                         [1,2,3].map((item, index) => (

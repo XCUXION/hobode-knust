@@ -25,19 +25,21 @@ const PaymentMethods = () => {
         })
     }
     return (
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
             {
                 paymentMethods.map((item, index) => (
                     <div 
-                        className={`flex cursor-pointer hover:scale-[1.05] duration-200 p-4 min-w-[120px] h-[70px] overflow-hidden rounded-md bg-bg-transparent-primary justify-center items-center ${item.active && 'border-[1px] border-solid border-main-primary bg-[#db950a15]'}`}
+                        className={`flex cursor-pointer hover:scale-[1.05] duration-200 p-4 overflow-hidden rounded-md bg-bg-transparent-primary justify-center items-center ${item.active && 'border-[1px] border-solid border-main-primary bg-[#db950a15]'}`}
                         key={index}
                         onClick={()=>setActivePaymentMethods(item.name)}
                     >
                         <Image
                             src={item.logo} 
                             alt="logo"
-                            height={50}
-                            style={{ objectFit: "contain"}}
+                            style={{
+                                objectFit: "contain"
+                            }}
+                            className="md:h-[40px] h-[30px] max-w-[60px] md:max-w-[80px]"
                         /> 
                     </div>
                 ))

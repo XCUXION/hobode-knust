@@ -16,8 +16,8 @@ const Hostel = () => {
     const rating = 3.5
 
     return (
-        <div className="2xl:w-[275px] w-[258px] rounded-xl bg-bg-transparent-primary p-2 gap-1 flex flex-col">
-            <div className="rounded-lg w-full h-[150px] relative overflow-hidden">
+        <div className="2xl:w-[275px] w-full md:w-[258px] rounded-xl bg-transparent md:bg-bg-transparent-primary md:p-2 gap-1 flex flex-col">
+            <div className="rounded-lg w-full h-[200px] md:h-[150px] relative overflow-hidden">
                 <FaHeart 
                     color="#00000019"
                     className="absolute top-3 right-3 z-[5] cursor-pointer backdrop-filter backdrop-blur-2xl"
@@ -28,18 +28,18 @@ const Hostel = () => {
                         alt="Profile-icon"
                         fill
                         style={{ objectFit: "cover" }}
-                        className="hover:scale-110 duration-200 cursor-pointer hover:opacity-70"
+                        className="hover:md:scale-110 duration-200 cursor-pointer hover:md:opacity-70"
                     /> 
                 </Link>
             </div>
             <div className="flex w-full justify-between px-1">
-                <div className="flex flex-col gap-[2px]">
+                <div className="flex flex-col gap-[4px]">
                     <Link href={'/hostels/1'}>
                         <Text
                             textColor={theme.colors.text.primary}
                             size={TypographySize.HM}
                             bold={TypographyBold.sm2}
-                            className="hover:!underline hover:!opacity-70"
+                            className="hover:!underline hover:!opacity-70 hover:!text-blue-700"
                         >
                             Franko Hostel
                         </Text>

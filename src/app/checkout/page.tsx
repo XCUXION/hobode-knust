@@ -37,8 +37,8 @@ const Checkout = () => {
                     <div className="flex flex-col gap-2 w-full">
                         <Crumbs />
                     </div>
-                    <div className="flex gap-8 w-full max-w-[1024px]">
-                        <div className="flex flex-col gap-4 w-[500px]">
+                    <div className="flex flex-wrap gap-8 w-full max-w-[1024px]">
+                        <div className="flex flex-col gap-4 w-full md:w-[500px]">
                             <PaymentMethods />
                             <AnimatePresence>
                                 {

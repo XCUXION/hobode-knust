@@ -28,13 +28,13 @@ const Crumbs = () => {
                     Home 
                 </Text>
             </Link>
-            <Text>{'>'}</Text>
+            <Text>{'/'}</Text>
             <Link href={'/'}>
                 <Text className="hover:!text-[royalblue]">
                     Booking
                 </Text>
             </Link>
-            <Text>{'>'}</Text>
+            <Text>{'/'}</Text>
             <Link href={'#'}>
                 <Text
                     textColor={theme.colors.main.primary}
